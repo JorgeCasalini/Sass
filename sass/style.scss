@@ -1,0 +1,82 @@
+//Imports Colors aula 8
+@import "./colors/colors.scss";
+//Import Home aula 8
+@import "./pages/home.scss";
+
+//Mixin aula 9
+//@mixin (nome desejado) (passo as variaveis desejadas com $ na frente)
+//passo o dado que desejo e coloco como valor, os parametros recebidos
+@mixin text-style($color, $font-size, $font-family) {
+    color: $color;
+    font-size: $font-size;
+    font-family: $font-family;
+}
+
+$btn-color: #ff4043;
+$width-btn: 85px;
+
+.btn1 {
+    width: $width-btn;
+    background-color: $btn-color;
+}
+
+.btn2 {
+    width: $width-btn;
+    background-color: $btn-color;
+}
+
+.classe1 {
+    ul {
+        background-color: #ff4043;
+    }
+
+    li {
+        background-color: blue;
+    }
+
+    button {
+        background-color: green;
+        color: white;
+
+        &:hover {
+            background-color: red;
+            transition: 1s;
+        }
+    }
+}
+
+.texts {
+    h1 {
+        @include text-style(#ff4043, 34px, Arial)
+    }
+
+    p {
+        @include text-style(blue, 22px, sans-serif)
+    }
+}
+
+.btn {
+    width: 125px;
+    padding: 10px 0px;
+    border-radius: 20px;
+    display: block;
+    margin-top: 10px;
+
+    //recebe os elementos anteriores por herança e
+    //passa novos elementos para a classe específica
+    &.btn-amarelo{
+        background-color: yellow;
+    }
+    &.btn-azul{
+        background-color: blue;
+        color: white;
+    }
+}
+//Usado extend, não sendo necessario declarar btn no html e
+//declarado fora diferente dos por herança
+.btn-roxo{
+    @extend .btn;
+    background-color: purple;
+    color: white;
+
+}
