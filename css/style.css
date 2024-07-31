@@ -66,4 +66,19 @@
   color: white;
 }
 
+#title {
+  color: #f1db83;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.divTitle {
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */

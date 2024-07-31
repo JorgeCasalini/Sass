@@ -80,3 +80,31 @@ $width-btn: 85px;
     color: white;
 
 }
+//Usando funções sass (não é muito comum)
+#title {
+    color: mix(white,#e2b606,50%);
+}
+
+//Criando function
+
+*{
+    margin: 0px;
+    padding:0px;
+}
+@function color-title($background-color){
+    @if(lightness($background-color) > 50%){
+        @return black;
+    } @else {
+        @return white;
+    }
+}
+
+@mixin background-color-mixin($color){
+    background-color: $color;
+    color: color-title($color);
+}
+
+.divTitle{
+    height: 100vh;
+    @include background-color-mixin(black)
+}
